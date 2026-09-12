@@ -6,5 +6,12 @@
   "background_color": "#0b0d12",
   "theme_color": "#0b0d12",
   "description": "Tracker personal de fuerza gamificado.",
-  "icons": []
+  "icons": [
+    {
+      "src": "assets/forge-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
