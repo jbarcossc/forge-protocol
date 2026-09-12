@@ -1,0 +1,21 @@
+{
+  "name": "forge-protocol",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forge Protocol - tracker de entrenamiento gamificado para Android",
+  "scripts": {
+    "web:sync": "powershell -ExecutionPolicy Bypass -File scripts/sync-web.ps1",
+    "android:add": "npm run web:sync && cap add android",
+    "android:sync": "npm run web:sync && cap sync android",
+    "android:open": "cap open android",
+    "android:build": "powershell -ExecutionPolicy Bypass -File scripts/build-android.ps1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "typescript": "^7.0.2"
+  }
+}

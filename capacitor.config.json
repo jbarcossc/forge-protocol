@@ -1,0 +1,9 @@
+{
+  "appId": "com.forgeprotocol.app",
+  "appName": "Forge Protocol",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "backgroundColor": "#0b0d12"
+  }
+}

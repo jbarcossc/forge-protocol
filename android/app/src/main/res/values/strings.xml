@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Forge Protocol</string>
+    <string name="title_activity_main">Forge Protocol</string>
+    <string name="package_name">com.forgeprotocol.app</string>
+    <string name="custom_url_scheme">com.forgeprotocol.app</string>
+</resources>

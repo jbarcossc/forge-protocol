@@ -1,0 +1,10 @@
+{
+  "name": "Forge Protocol",
+  "short_name": "Forge",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "description": "Tracker personal de fuerza gamificado.",
+  "icons": []
+}

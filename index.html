@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="description" content="Forge Protocol, un tracker personal de fuerza gamificado." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Forge Protocol</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-mark"><span class="brand-cross">+</span> FORGE</div>
+        <button class="icon-button" id="resetButton" aria-label="Reiniciar progreso" title="Reiniciar progreso">↻</button>
+      </header>
+
+      <section class="screen active" id="homeScreen">
+        <div class="hero-copy">
+          <p class="eyebrow">PROTOCOLO DIARIO <span>•</span> 07:42:18</p>
+          <h1>Tu siguiente<br /><em>ascenso.</em></h1>
+          <p class="hero-subtitle">Cada repetición escribe tu próxima versión.</p>
+        </div>
+
+        <section class="rank-panel">
+          <div class="rank-topline"><span>NIVEL ACTUAL</span><strong id="levelLabel">LVL 0</strong></div>
+          <div class="rank-name-row"><strong id="rankName">SHADOW RUNNER</strong><span id="xpLabel">2,480 / 3,000 XP</span></div>
+          <div class="xp-track"><span id="xpBar"></span></div>
+          <div class="rank-foot"><span id="xpToNextLabel">+3.000 XP para ascender</span><span id="streakLabel">0 DÍAS</span></div>
+        </section>
+
+        <section class="section-block mission-section">
+          <div class="section-heading"><div><p class="eyebrow">OBJETIVOS DE HOY</p><h2>MISIONES ACTIVAS</h2></div><span class="counter" id="missionCounter">01 / 03</span></div>
+          <div class="mission-list" id="missionList"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><p class="eyebrow">LECTURA DE PODER</p><h2>ESTADÍSTICAS</h2></div><button class="text-button" data-screen="statsScreen">VER TODO <span>→</span></button></div>
+          <div class="stat-grid" id="statGrid"></div>
+        </section>
+      </section>
+
+      <section class="screen" id="statsScreen">
+        <div class="page-heading"><p class="eyebrow">ANÁLISIS DEL HUNTER</p><h1>Mapa de <em>poder</em></h1><p>Tu percentil contra otros hunters de tu nivel.</p></div>
+        <div class="overall-card"><div><span class="eyebrow">POWER SCORE</span><strong id="powerScore">8</strong><span>/100</span></div><div class="score-ring"><span id="scoreRing">8%</span></div></div>
+        <div class="stat-detail-list" id="statDetailList"></div>
+        <div class="weakness-callout"><span class="callout-icon">!</span><div><strong>Tu punto de quiebre</strong><p id="weaknessText">Core está en fase inicial. Completá misiones para subirlo.</p></div><span>→</span></div>
+      </section>
+
+      <section class="screen" id="missionsScreen">
+        <div class="page-heading"><p class="eyebrow">TABLERO DE CAMPAÑA</p><h1>Misiones <em>diarias</em></h1><p>Completa objetivos para desbloquear tu siguiente tier.</p></div>
+        <div class="campaign-banner"><span>RACHA ACTIVA</span><strong>7 DÍAS</strong><small>+15% XP esta semana</small></div>
+        <div class="mission-list full-list" id="fullMissionList"></div>
+      </section>
+
+      <section class="screen" id="profileScreen">
+        <div class="page-heading"><p class="eyebrow">IDENTIDAD LOCAL</p><h1>Tu <em>perfil</em></h1><p>Sin cuentas. Tus datos viven en este dispositivo.</p></div>
+        <div class="profile-card"><div class="avatar">FR</div><div><span class="eyebrow">HUNTER ID</span><h2>FORGE RUNNER</h2><p><strong id="profileRank">RANGO F</strong></p></div><span class="profile-level" id="profileLevel">12</span></div>
+        <div class="achievement-grid"><div><span>SESIONES</span><strong id="sessionCount">0</strong></div><div><span>XP TOTAL</span><strong id="totalXp">0</strong></div><div><span>MEJOR RACHA</span><strong id="bestStreak">0d</strong></div><div><span>LOGROS</span><strong id="achievementCount">0</strong></div></div>
+        <section class="equipment-panel">
+          <div class="section-heading"><div><p class="eyebrow">CONFIGURACIÓN LOCAL</p><h2>MI EQUIPAMIENTO</h2></div><span class="counter" id="equipmentCount">03 ACTIVOS</span></div>
+          <p class="equipment-help">Elegí qué tenés disponible. Barra y barra de dominadas son equipamientos distintos.</p>
+          <div class="equipment-grid" id="equipmentGrid"></div>
+        </section>
+        <div class="data-note"><span>◈</span><p>Basado en 1.324 ejercicios del dataset de <strong>hasaneyldrm/exercises-dataset</strong>. Media: Gym visual.</p></div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button class="nav-item active" data-screen="homeScreen"><span>⌂</span><small>INICIO</small></button>
+        <button class="nav-item" data-screen="statsScreen"><span>⌁</span><small>PODER</small></button>
+        <button class="nav-item" data-screen="missionsScreen"><span>◈</span><small>MISIONES</small></button>
+        <button class="nav-item" data-screen="profileScreen"><span>◉</span><small>PERFIL</small></button>
+      </nav>
+    </main>
+
+    <div class="exercise-modal" id="exerciseModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" data-close-modal aria-label="Cerrar explicación">×</button>
+        <img class="exercise-media" id="modalMedia" alt="Animación del ejercicio" />
+        <div class="modal-content">
+          <p class="eyebrow" id="modalCategory">EJERCICIO</p>
+          <h2 id="modalTitle">Ejercicio</h2>
+          <div class="modal-prescription" id="modalPrescription">3 SERIES · 10 REPS</div>
+          <div class="exercise-tags" id="modalTags"></div>
+          <p class="modal-instructions" id="modalInstructions"></p>
+          <div class="form-cue"><span>FORMA</span><strong id="modalCue"></strong></div>
+          <button class="modal-complete" id="modalComplete">COMPLETAR MISIÓN <span>→</span></button>
+        </div>
+      </article>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="data/bodyweight-exercises.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
