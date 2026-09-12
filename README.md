@@ -4,6 +4,8 @@ Prototipo mobile-first de un tracker personal de entrenamiento gamificado, inspi
 
 Para empaquetarlo e instalarlo en Android, ver [ANDROID.md](ANDROID.md).
 
+Si querés instalar la app como APK, descargá el archivo de la última publicación disponible en la sección [Releases](../../releases) del repositorio.
+
 ## Ejecutar
 
 Abrir `index.html` directamente en un navegador moderno. No requiere instalación, cuenta, servidor ni backend. El progreso se guarda localmente con `localStorage`.
@@ -16,6 +18,14 @@ Abrir `index.html` directamente en un navegador moderno. No requiere instalació
 - Perfil local sin autenticación.
 - Manifest para instalarlo como PWA en Android desde el navegador.
 - Catálogo local de 253 ejercicios seguros de peso corporal o barra de dominadas.
+
+## Capturas
+
+<p align="center">
+	<img src="screenshots/1.png" alt="Pantalla de inicio" width="250">
+	<img src="screenshots/2.png" alt="Mapa de poder" width="250">
+	<img src="screenshots/3.png" alt="Misiones diarias" width="250">
+</p>
 
 ## Dataset
 
